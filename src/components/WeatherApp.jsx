@@ -20,8 +20,19 @@ const WeatherApp = () => {
     const [citySuggestions, setCitySuggestions] = useState([])
     const [forecastDays, setforecastDays] = useState(null)
     const [forecastHours, setForecastHours] = useState(null)
+    const [background, setBackground] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const [satelliteImage, setSatelliteImage] =useState('')
 
+    const setBackgroundByWeather = (condition) => {
+      if (condition.includes('rain')) {
+        setBackground(videoMap.rain);
+      }  else if (condition.includes('clear')) {
+        setBackground(videoMap.clear)
+      } else {
+        setBackground(videoMap.null)
+      }
+    }
 
 
     const ApiWeatherApi = async() => {
@@ -31,8 +42,14 @@ const WeatherApp = () => {
             `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${location}`
             )
             setWheather(reponse.data)
-          
-            
+            if(reponse.data && reponse.data.current && reponse.data.current.condition){
+              setBackgroundByWeather(reponse.data.current.condition.text)
+            }
+            if(reponse.data && reponse.data.current && reponse.data.current.satellite) {
+              setSatelliteImage(reponse.data.current.satellite)
+            } else {
+              setSatelliteImage('')
+            }
         } catch (error) {
             console.log('No se pudo obetener la base de datosea')
         } finally {
@@ -70,7 +87,7 @@ const WeatherApp = () => {
 
     const handlePressEnter = (e) => {
       if(e.key === 'Enter') {
-        setCitySuggestions(false)
+        handleSubmit(e)
       }
 
     }

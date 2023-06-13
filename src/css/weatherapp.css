@@ -615,10 +615,6 @@
     display: none;
   }
 
-  .container-satelliteImages_responsive {
-    display: none;
-  }
-
 
   @media screen and (max-width: 600px) {
 
@@ -660,21 +656,12 @@
         & input {
             font-size: 16px;
             width: auto;
-
             background-color: var(--color-secondary);
             text-align: center;
         }
 
     }
 
-    .container-satelliteImages_responsive {
-        display: block;
-        
-    }
-
-    .container-citiesSuggest_responsive {
-        margin: 10px 20px 0px 0px;
-    }
     .general-weather_current {
         color: white;
         display: flex;
