@@ -75,7 +75,7 @@ const WeatherApp = () => {
     const forecastHour = async() => {
         try {
             const reponse = await axios.get (
-                `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&hours=24&aqi=no&alerts=no`
+                `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&hours=24&aqi=no&alerts=no`
             )
             setForecastHours(reponse.data)
         } catch (error) {
