@@ -278,12 +278,17 @@ const handleSubmit = (e) => {
           </div>
 
           <div className='general-weather_current'>
-                <p className='location-name'> <IoLocationSharp/> {weather.location.name}</p>
+                <p className='location-name'>  {weather.location.name}, {weather.location.country}</p>
                 <article>
                   <img src={weather.current.condition.icon} alt="" />
                 </article>
-                <h4>{weather.current.temp_c}</h4>
+                <h4>{weather.current.temp_c}°C</h4>
                 <p className='current-condition_text'>{weather.current.condition.text}</p>
+                {/* <div className='container-current_extras'> 
+                <p>{weather.current.wind_kph}km/h</p>
+                <p>{weather.current.precip_mm}mm</p>
+                <p>{weather.current.humidity}%</p>
+                </div> */}
           </div>
          
         </div>
