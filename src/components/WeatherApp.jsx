@@ -4,6 +4,8 @@ import { useState } from 'react'
 import '../css/weatherapp.css'
 import {IoLocationSharp} from 'react-icons/io5'
 import Loading from './Loading.jsx'
+import {IoWaterOutline, IoThermometerOutline} from 'react-icons/io5'
+import {FiWind} from 'react-icons/fi'
 
 const API_KEY = "00c4300f529349f393630439232305"
 
@@ -279,16 +281,27 @@ const handleSubmit = (e) => {
 
           <div className='general-weather_current'>
                 <p className='location-name'>  {weather.location.name}, {weather.location.country}</p>
-                <article>
+                {/* <article>
                   <img src={weather.current.condition.icon} alt="" />
-                </article>
+                </article> */}
                 <h4>{weather.current.temp_c}°C</h4>
                 <p className='current-condition_text'>{weather.current.condition.text}</p>
-                {/* <div className='container-current_extras'> 
+
+                <div className='container-current_extras'> 
+                <div>
+                  <FiWind/>
                 <p>{weather.current.wind_kph}km/h</p>
-                <p>{weather.current.precip_mm}mm</p>
+                </div>
+                <div>
+                  <IoThermometerOutline/>
+                <p>{weather.current.precip_mm}%</p>
+                </div>
+                <div>
+                  <IoWaterOutline/>
                 <p>{weather.current.humidity}%</p>
-                </div> */}
+
+                </div>
+                </div>
           </div>
          
         </div>

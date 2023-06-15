@@ -246,10 +246,10 @@
 
 .container-weatherApp {
     display: flex;
-    background: var(--color-primary);
+    /* background: var(--color-primary); */
+    background: url('https://image-tc.galaxy.tf/wijpeg-3x9c2wsaaqcc2yab0o3cu8jpd/balloon.jpg');
     justify-content: space-between;
     background-size: cover;
-    background-size: contain;
     align-items: flex-end;
 
 }
@@ -389,6 +389,7 @@
     height: 100vh;
     /* background: url('https://wallpapershome.com/images/wallpapers/forest-1920x1080-5k-4k-wallpaper-8k-mist-hills-fog-6505.jpg') ; */
     background-color: var(--color-primary);
+    
 }
 
 
@@ -622,7 +623,6 @@
     .container-weatherApp_responsive {
         display: block;
         position: relative;
-        padding: 23px 0px 0px;
         background-color: var(--color-primary);
     }
 
@@ -637,8 +637,8 @@
     .container-currentWeather_responsive {
         display: grid;
         align-items: center;
+        padding: 20px;
         justify-items: center;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         
     }
 
@@ -665,6 +665,7 @@
     .general-weather_current {
         color: white;
         display: flex;
+        width: -webkit-fill-available;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -678,12 +679,13 @@
 
         & h4 {
             font-size: 64px;
+            margin: 20px 0px;
         }
        
     }
 
     .current-condition_text {
-        font-size: 33px;
+        font-size: 20px;
     }
 
     .location-name {
@@ -757,6 +759,28 @@
         }
     }
     
+
+    .container-current_extras {
+        display: flex;
+        background-color: var(--color-secondary);
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        width: -webkit-fill-available;
+        margin: 20px 50px;
+        padding: 10px 10px;
+        align-items: center;
+        justify-content: space-around;
+
+
+        & div {
+            display: flex;
+            flex-direction: column;
+            align-items: center ;
+        }
+        & svg {
+            font-size: 30px;
+        }
+    }
   }
 
 
