@@ -632,6 +632,7 @@
         background-color: var(--color-secondary);
         height: 45px;
         text-align: center;
+        padding: 0px 25px;
     }
 
     .container-currentWeather_responsive {
@@ -659,6 +660,7 @@
             width: auto;
             background-color: var(--color-secondary);
             text-align: center;
+
         }
 
     }
