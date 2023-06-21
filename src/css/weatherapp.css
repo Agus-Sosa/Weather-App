@@ -666,7 +666,8 @@
     .general-weather_current {
         color: white;
         display: flex;
-        width: -webkit-fill-available;
+        /* width: -webkit-fill-available; */
+        width: auto;
         justify-content: center;
         align-items: center;
         flex-direction: column;
